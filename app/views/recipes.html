@@ -1,0 +1,10 @@
+<p>This is the recipes view.</p>
+<div ng-controller="atpodRcpRecipesCtrl as ctrl">
+11:{{results}}
+  <atpod-rcp-search results-container="results"></atpod-rcp-search>
+
+<p>Search Results:</p>
+  <div ng-repeat="doc in results.docs">
+    <p> {{doc}} </p>
+  </div>
+</div>

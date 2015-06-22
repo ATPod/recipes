@@ -1,0 +1,16 @@
+<p>This is the about view.</p>
+<div ng-repeat="item in awesomeThings">
+ {{item}}
+</div>
+<div ng-controller="AboutCtrl as ctrl">
+  <form ng-submit="ctrl.submit()">
+    <input type="text" ng-model="ctrl.query">
+    <input type="submit" value="Submit">
+  </form>
+<p>Query String:</p>
+<p>{{ctrl.query}}</p>
+<p>Search Results:</p>
+  <div ng-repeat="doc in results.docs">
+    <p> {{doc}} </p>
+  </div>
+</div>
