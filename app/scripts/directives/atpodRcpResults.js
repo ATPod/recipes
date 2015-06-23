@@ -5,6 +5,9 @@
         return {
             templateUrl: 'views/components/results.html',
             restrict: 'AE',
+            scope: {
+            	item:'='
+            }
         };
     });
   })();

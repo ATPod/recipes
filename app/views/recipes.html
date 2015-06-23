@@ -4,7 +4,8 @@
   <atpod-rcp-search results-container="results"></atpod-rcp-search>
 
 <p>Search Results:</p>
+  
   <div ng-repeat="doc in results.docs">
-    <p> {{doc}} </p>
+    <atpod-rcp-results item="doc"></atpod-rcp-results>
   </div>
 </div>
