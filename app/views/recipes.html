@@ -1,11 +1,19 @@
+<div class="page-header"><h1>Find Your Recipes!</h1></div>
 <p>This is the recipes view.</p>
 <div ng-controller="atpodRcpRecipesCtrl as ctrl">
-11:{{results}}
   <atpod-rcp-search results-container="results"></atpod-rcp-search>
-
-<p>Search Results:</p>
-  
-  <div ng-repeat="doc in results.docs">
-    <atpod-rcp-results item="doc"></atpod-rcp-results>
+  <p>Search Results:</p>
+<div class="row">
+  <div ng-switch on="results.docs.length" >
+    <div ng-switch-when="0">
+      Unfortunately nothing found(
+    </div>
+    <div ng-switch-default>
+      <div ng-repeat="doc in results.docs track by $index">
+     <div>
+       <atpod-rcp-results ng-if="$index<=4" item="doc"></atpod-rcp-results>
+     </div>
+   </div>        
+    </div>  
   </div>
 </div>

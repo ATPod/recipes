@@ -11,6 +11,6 @@ angular.module('recipesApp')
   .controller('atpodRcpRecipesCtrl', function ($scope) {
   console.log('$scope1',$scope);
   //var self = this;  
-  $scope.results = {docs: {test1:['1','2']} };
+  $scope.results = {docs: [] };
   console.log('$scope1.results:', $scope.results);
 });
