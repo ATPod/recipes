@@ -1,7 +1,8 @@
 'use strict';
 
 angular.module('recipesApp')
-  .directive('atpodRcpSearch', ['atpodRcpDoSearch', function(atpodRcpDoSearch){
+  .directive('atpodRcpSearch', ['atpodRcpDoSearch','atpodRcpLSQueries',
+                                function(atpodRcpDoSearch, atpodRcpLSQueries){
     return {
       templateUrl: 'views/components/search.html',
       restrict: 'AE',
@@ -22,6 +23,7 @@ angular.module('recipesApp')
                     if(angular.isObject(data.response) && 
                       !(angular.isUndefined(data.response))){
                         console.log('search success!', self.query);
+                        atpodRcpLSQueries.setData('atpodRcpQueries', self.query);
                         $scope.resultsContainer.docs = docs;
                     } else {
                     	console.log('Search failed!');
