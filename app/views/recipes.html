@@ -7,13 +7,11 @@
   <div ng-switch on="results.docs.length" >
     <div ng-switch-when="0">
       <atpod-rcp-initial results-container="results"></atpod-rcp-initial>
-      {{results}}
       <div ng-repeat="doc in results.docs track by $index">
         <div>
           <atpod-rcp-results ng-if="$index<=4" item="doc"></atpod-rcp-results>
         </div>
       </div>
-      Unfortunately nothing found(  
     </div>
     <div ng-switch-default>
         <div ng-repeat="doc in results.docs track by $index">

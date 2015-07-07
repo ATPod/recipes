@@ -9,26 +9,34 @@
             resultsContainer:'='
           },
         link: function($scope){
-        	var latestQuery = atpodRcpLSQueries.getData('atpodRcpQueries');
-        	console.log('latestQuery', latestQuery);
-        	if (angular.isString(latestQuery)){
-        		console.log('TEST');
-        		atpodRcpDoSearch.getResults(latestQuery)
-        		.success(function(data) {
-        			console.log('test111', data.response.docs);
-                    var docs = data.response.docs;
+          var latestQuery = atpodRcpLSQueries.getData('atpodRcpQueries');
+          console.log('latestQuery',latestQuery );
+          if (angular.isString(latestQuery)){
+            atpodRcpDoSearch.getResults(latestQuery)
+                    .success(function(data) {
                     if(angular.isObject(data.response) && 
                       !(angular.isUndefined(data.response))){
-                        $scope.resultsContainer.docs = docs;
+                        $scope.resultsContainer.docs = data.response.docs;
                     } else {
-                    	console.log('Search failed!');
+                      console.log('Search failed!');
                     }
                   }).error(function() {
                     console.log('Search failed!');
                   });
-        	} else {
-        		// return most popular recipes
-        	}
+          } else {
+          // return most popular recipes
+              atpodRcpDoSearch.getResults('%D1%85%D0%BE%D0%BB%D0%BE%D0%B4%D0%B5%D1%86')
+              .success(function(data) {
+              if(angular.isObject(data.response) && 
+                !(angular.isUndefined(data.response))){
+                  $scope.resultsContainer.docs = data.response.docs;
+              } else {
+                console.log('Search failed!');
+              }
+            }).error(function() {
+              console.log('Search failed!');
+            });
+          }
         }  
       };
     }]);
