@@ -22,7 +22,7 @@
           getData: function( key ){
             try{
               if( angular.isDefined($window.Storage) ){
-                return $window.localStorage.setItem( key );
+                return $window.localStorage.getItem( key );
               } else {
                 return $cookieStore.get(key);
               }
