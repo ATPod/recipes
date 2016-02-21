@@ -1,5 +1,4 @@
 {
   solrUrl:'http://localhost:8983/solr/collection1/select',
-  method:'JSONP',
-  
+  method:'JSONP'
 }

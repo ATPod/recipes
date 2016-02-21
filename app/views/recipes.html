@@ -9,14 +9,14 @@
       <atpod-rcp-initial results-container="results"></atpod-rcp-initial>
       <div ng-repeat="doc in results.docs track by $index">
         <div>
-          <atpod-rcp-results ng-if="$index<=4" item="doc"></atpod-rcp-results>
+          <atpod-rcp-results ng-if="$index<=20" item="doc"></atpod-rcp-results>
         </div>
       </div>
     </div>
     <div ng-switch-default>
         <div ng-repeat="doc in results.docs track by $index">
           <div>
-          <atpod-rcp-results ng-if="$index<=4" item="doc"></atpod-rcp-results>
+          <atpod-rcp-results ng-if="$index<=20" item="doc"></atpod-rcp-results>
           </div>
         </div>        
     </div>  

@@ -16,6 +16,7 @@
                     .success(function(data) {
                     if(angular.isObject(data.response) && 
                       !(angular.isUndefined(data.response))){
+                    	// TODO add hl to highlight results
                         $scope.resultsContainer.docs = data.response.docs;
                     } else {
                       console.log('Search failed!');

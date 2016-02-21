@@ -20,8 +20,8 @@ angular
   .config(function ($routeProvider) {
     $routeProvider
       .when('/', {
-        templateUrl: 'views/main.html',
-        controller: 'MainCtrl'
+          templateUrl: 'views/recipes.html',
+          controller: 'atpodRcpRecipesCtrl'
       })
       .when('/about', {
         templateUrl: 'views/about.html',
